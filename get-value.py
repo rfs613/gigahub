@@ -16,7 +16,7 @@ if __name__ == "__main__":
     if len(sys.argv) != 2:
         raise SystemExit("usage: get-value.py <xpath>")
 
-    if (github_access_token := os.getenv("GIGAHUB_PASSWORD")) is None:
+    if (os.getenv("GIGAHUB_PASSWORD")) is None:
         raise SystemExit("error: no GIGAHUB_PASSWORD set")
 
     session, reply = gigahub.open_session(username="admin", password=os.getenv("GIGAHUB_PASSWORD"))
